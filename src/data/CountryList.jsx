@@ -3,17 +3,23 @@ import React, { useState, useEffect } from "react";
 const CountryList = () => {
     const [countries, setCountries] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null); // Tambahkan state error
 
     useEffect(() => {
         fetch("https://restcountries.com/v3.1/all")
-            .then((response) => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch countries");
+                }
+                return response.json();
+            })
             .then((data) => {
                 setCountries(data);
-                console.log(data);
                 setLoading(false);
             })
-            .catch((error) => {
-                console.error("Error fetching countries:", error);
+            .catch((err) => {
+                console.error("Error fetching countries:", err);
+                setError(err.message); // Set pesan error
                 setLoading(false);
             });
     }, []);
@@ -22,6 +28,23 @@ const CountryList = () => {
         return (
             <div className="flex justify-center items-center h-screen">
                 <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-blue-500"></div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <div className="text-center">
+                    <p className="text-red-500 text-xl font-bold">Oops! Something went wrong.</p>
+                    <p className="text-gray-700">{error}</p>
+                    <button
+                        onClick={() => window.location.reload()}
+                        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-600"
+                    >
+                        Retry
+                    </button>
+                </div>
             </div>
         );
     }
