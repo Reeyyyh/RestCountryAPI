@@ -16,22 +16,6 @@ const Sidebar = () => {
                         Home
                     </button>
                 </li>
-                <li className="mb-2">
-                    <button
-                        className="w-full text-left hover:bg-gray-700 p-2 rounded"
-                        onClick={() => navigate("/about")}
-                    >
-                        About
-                    </button>
-                </li>
-                <li className="mb-2">
-                    <button
-                        className="w-full text-left hover:bg-gray-700 p-2 rounded"
-                        onClick={() => navigate("/services")}
-                    >
-                        Services
-                    </button>
-                </li>
             </ul>
         </div>
     );
