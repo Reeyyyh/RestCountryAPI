@@ -1,8 +1,26 @@
-# React + Vite
+# Rest Countries List - React Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple web application built with React and Tailwind CSS that fetches and displays a list of countries using the [Rest Countries API](https://restcountries.com/). The app allows users to view a list of countries, their flags, and some basic information.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fetches country data from the Rest Countries API
+- Displays country name, flag, and basic details like population, region, and capital
+- Fully responsive design built with Tailwind CSS
+- Smooth animations and interactions
+
+## Tech Stack
+
+- **Frontend**: React
+- **CSS Framework**: Tailwind CSS
+- **API**: Rest Countries API (https://restcountries.com/)
+
+## Setup and Installation
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- **Node.js**: [Download Node.js](https://nodejs.org/)
+- **npm**: Comes bundled with Node.js
+- **Yarn (optional)**: [Install Yarn](https://yarnpkg.com/getting-started/install)
